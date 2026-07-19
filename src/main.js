@@ -115,13 +115,7 @@ function createActionCell(ticket) {
 function showTicketDetails(ticket) {
   ticketDetailsTitle.textContent = ticket.title;
   ticketDetailsCustomer.textContent = ticket.customer;
-  ticketDetailsBody.replaceChildren();
-
-  // Intentionally unsafe for the L18 student sprint.
-  ticketDetailsBody.insertAdjacentHTML(
-    "beforeend",
-    ticket.description || "Nessuna descrizione."
-  );
+  ticketDetailsBody.textContent = ticket.description || "Nessuna descrizione.";
 
   ticketDetails.hidden = false;
 }
